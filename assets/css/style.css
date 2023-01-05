@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;/*Sem isso o body tem a altura do conteúdo*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*-------------------------Header--------------*/
+header {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 15px;
+}
+
+.menu {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap:20px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #444;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+#menu_apps {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu_apps:hover {
+    background-color: #eaeaeab1;
+}
+
+#menu_apps svg {
+    width: 70%;
+}
+
+
+.profile_pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border: 3px solid transparent;
+}
+
+.profile_pic:hover {
+    border-color:  #cececea4;
+}
+
+.menu img {
+    height: 100%;
+}
+
+
+/*----------------------------Geral----------------*/
+.geral {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;/*Permite que a div cresça para ocupar a tela inteira, desde que o cabeçalho e o rodapé sejam flex 0*/
+}
+
+.box_logo {
+    width: 100%;
+    min-height: 20px;
+    max-height: 260px;
+    height: calc(100% - 50px);/*Permite que no começo o logo fique mais para baixo, conforme a janela é diminuida a altura vai diminuindo até a mínima*/
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#logo {
+    min-width: 200px;
+    max-width: 272px;
+    width: 70%;
+}
+
+.container_buscador {
+    padding: 5px 10px;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid #dfe1e5;
+}
+
+.container_buscador:hover {
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.132);
+}
+
+.box_form {
+    flex-grow: 1;
+}
+
+
+.icon_buscador {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon_buscador svg {
+    width: 60%;
+}
+
+.buscador {
+    border: none;
+    min-width: 100px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 16px;
+    color:#444;
+}
+
+.buscador:focus {
+    outline: none;
+}
+
+.box_bt {
+    margin-top: 20px;
+    min-width: 190px;
+    max-width: 325px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.box_bt a {
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #444;
+    display: block;
+    background-color: #f9f9f9ea;
+    white-space: nowrap;
+}
+
+.box_bt a:hover {
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.132);
+}
+
+
+
+/*----------------------------Footer----------------*/
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(244, 244, 244, 0.83);
+    font-size: 15px;
+    color: rgba(92, 92, 92, 0.785);
+}
+
+.user_country {
+    padding: 15px 30px;
+    border-bottom: 1px solid rgba(215, 214, 214, 0.801);
+}
+
+
+.redirecionamento {
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.redirecionamento a {
+    margin-bottom: 15px;
+    padding-right: 20px;
+    text-decoration: none;
+    white-space: nowrap;/*Evita que o texto quebre de linha*/
+    color: rgba(92, 92, 92, 0.785);
+}
+
+.redirecionamento a:hover {
+    text-decoration: underline;
+}
+
+#curiosidade, #contratos {
+    display: flex;
+    justify-content: space-between;
+}
+
+#curiosidade {
+    flex-wrap: wrap;
+}
+
+/*----------------------------Responsividade----------------*/
+@media screen and (max-width: 830px) {
+     .box_bt {
+        width: 25%;
+        font-size: 9px;
+    }
+
+    .box_bt a {
+        padding: 5px 10px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+
+    .redirecionamento {
+        flex-direction: column;
+    }
+
+    #curiosidade, #contratos {
+        justify-content: center;
+    }
+
+}
